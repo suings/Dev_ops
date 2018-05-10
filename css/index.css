@@ -1,0 +1,164 @@
+body{
+	max-width: 1400px;
+	margin: auto;
+}
+/*header部分*/
+.headbackground{
+	width: 1400px;
+	height: 251px;
+	background-image: url("../images/17.png");
+	z-index: 0;
+} 
+.header{
+	width: 1400px;
+	height: 251px;
+	line-height: 251px;
+	position: absolute;
+	margin-top: -251px;
+	margin-bottom: 10px;
+}
+.header >img{
+	vertical-align:middle;
+	z-index: 1;
+} 
+#img2{
+	position: absolute;
+	right: 23px;
+	margin-right: 23px;
+	z-index: -1;
+}
+.title{
+	display: inline;
+	z-index: 1;
+	color: white;
+}
+/*head部分结束*/
+
+/*nav导航栏部分*/
+.navbar{
+	width: 1400px;
+	display: -webkit-flex; /* Safari */
+		display: flex;
+		background-color: #006986;
+		margin-bottom: 10px;
+}
+.nav{
+	flex: 1;
+	height: 60px;
+	line-height: 60px; 
+    text-align: center;
+    background-color: #006986;
+    border-radius: 2px;
+}
+.nav:first-child{
+	background-color: lightgray;
+	color: #006986;
+}
+/*nav部分结束*/
+
+
+/*主题内容*/
+.content > div >div{
+	float: left;
+}
+.layer1{
+	display: flex;
+}
+.layer2{
+	display: flex;
+}
+
+.block1{
+	width: 35%;
+	margin-right: 30px;
+}
+.block2{
+	flex: 1;
+}
+.block3{
+	clear: left;
+	flex: 2;
+	margin-right:30px; 
+}
+.block4{
+	clear: left;
+	flex: 2;
+	margin-right:30px; 
+}
+.block5{
+	border-style:solid;
+	border-width: 1px;
+
+	clear: left;
+	flex: 1;
+}
+
+hr{
+	background: #0384a8;
+	border: none;
+	height: 3px;
+
+}
+li{
+	color: #0384a8;
+}
+.infotitle{
+	color: black;
+	flex: 1;
+}
+li >div{
+	display: flex;
+}
+
+.titlebar{
+	height: 34px;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	width: 100%;		}
+.title1{
+	font-size: 34px;
+}
+.title2{
+	font-size: 28px;
+	flex-grow: 1;
+	color: #0384a8;
+}
+.more{
+	font-size: 28px;
+	color: #0384a8;
+}
+.block5 > span{
+	display: block;
+	font-size: 25px;
+	color: #0384a8;
+	text-align: center;
+}
+.block2_block{
+	display: flex;
+}
+.infoimg{
+	max-width: 50%;
+	border-style: solid;
+	border-width: 1px;
+	padding: 10px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+/*主体内容结束*/
+
+/*页脚内容*/
+.footer{
+	float: left;
+	text-align: center;
+	width: 1400px;
+	background-color: #0384a8;
+	color: white;
+}
+/*页脚内容结束*/
+h1{
+	text-align: center;
+}
+p{
+	text-indent: 32px;
+}
