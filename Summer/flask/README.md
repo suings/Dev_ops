@@ -59,9 +59,9 @@ api.sendmail()里面隐去了账户信息，使用前需先补充完整
 没有对[remind.py](remind.py)进行测试，因为数据库中没有太多信息。只对检查数据更新和发送邮件进行了测试。只要定时检查的逻辑没有问题，其他的应该是没有问题的。
 
 ## 附
-app.py和remind.py可以单独运行起来，放在后台运行可以使用:
-`nohup python3 app.py >> app.log 2>&1 &`  
-`nohup python3 remind.py >> remind.log 2>&1 &`
+app.py和remind.py可以单独运行起来，放在后台运行可以使用:  
+`nohup python3 app.py >> app.log 2>&1 &`    
+`nohup python3 remind.py >> remind.log 2>&1 &`  
 ## 完成图
 ![](img/1.png)  
 ![](img/2.png)
