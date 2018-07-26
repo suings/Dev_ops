@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="info" >
+        <ul class="s_info" >
+            <li class="ss_info" >姓名：</li>
+            <li class="ss_info" > {{content.学籍信息.姓名}}</li> 
+            <li class="ss_info" >学号：</li>
+            <li class="ss_info last" > {{content.学籍信息.学号}}</li>
+            
+        </ul>
+        <ul class="s_info" >
+            <li class="ss_info" >院系：</li>
+            <li class="ss_info" > {{content.学籍信息.院系}}</li>
+            <li class="ss_info" >所属班级：</li>
+            <li class="ss_info last" > {{content.学籍信息.所属班级}}</li>
+
+        </ul>
+        <ul class="s_info">
+            <li class="ss_info" >更新时间：</li>
+            <li class="ss_info" > {{content.更新时间}}</li>
+            <li class="ss_info" >订阅：</li>
+            <li class="ss_info last" >
+                <a href="/remind?user_id={{content.学籍信息.学号}}" target="_blank">
+                    {% if content.订阅 %}
+                        {{content.订阅}}
+                    {% else %}
+                        立即订阅
+                    {% endif %}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="grades" >
+        <ul class="grade">
+            <li class="gg_info" >课程名称</li>
+            <li class="ggs_info" >课程时间</li>
+            <li class="g_info" >课程类别</li>
+            <li class="g_info" >学分</li>
+            <li class="g_info" >成绩</li>
+            <li class="g_info last" >绩点</li>
+        </ul>
+        
+        {% for grade in content.成绩 %}
+        <ul class="grade">
+            <li class="gg_info" >{{grade.课程名称}}</li> 
+            <li class="ggs_info" >{{grade.学年学期}}</li>
+            <li class="g_info" >{{grade.课程类别}}</li>
+            <li class="g_info" >{{grade.学分}}</li>
+            <li class="g_info" >{{grade.最终}}</li>
+            <li class="g_info last" >{{grade.绩点}}</li>
+        </ul>
+        {% endfor %}
+    </div>
+
+{% endblock %}
