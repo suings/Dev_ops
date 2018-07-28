@@ -2,11 +2,11 @@
 
 
 ## 安装:  
-`uname -r`显示出的版本需要大于3.10
+`uname -r`显示出的版本需要大于3.10  
 `wget -qO- https://get.docker.com/ | sh`
 ## 启动:
     `service docker start`
-##改源(大概就这个意思):
+## 改源(大概就这个意思):
 编辑`/etc/docker/daemon.json`文件，没有就新建文件，添加：
 ```
 {
