@@ -1,4 +1,4 @@
-# docker的使用(debian系linux)
+# docker的使用(debian系)
 
 
 ## 安装:  
@@ -63,13 +63,13 @@ EXPOSE 5000
 CMD /src/start.sh
 ```
 
-Dockerfile的使用：
+Dockerfile的使用：  
 `docker build -t yuol:0.1 ./`  
 即`docker build -t 自定义的名称:版本 目录`
-
-然后启动:
-`docker run -d -p 80:5000 yuol:0.1`
-解释:
+  
+然后启动:  
+`docker run -d -p 80:5000 yuol:0.1`  
+解释:  
 `-d`:后台运行  
 `-p 80:5000`将本机80端口与docker容器的5000端口绑定  
 `yuol:0.1`使用哪个docker镜像，上面build的是yuol:0.1,所以使用的也是yuol:0.1  
