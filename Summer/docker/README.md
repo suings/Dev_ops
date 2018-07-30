@@ -75,5 +75,53 @@ Dockerfile的使用：
 `yuol:0.1`使用哪个docker镜像，上面build的是yuol:0.1,所以使用的也是yuol:0.1  
 启动以后就可以通过本机ip访问了:
 
+## dockerhub
+先于dockerhub注册账户，然后在终端登录`docker login`  
+登录以后push就很简单了:
+1. 更改tag为username/tag:version格式
+1. 推送  
+
+全过程:
+```
+[root@winserver2012 db3]# docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: suing
+Password: 
+Login Succeeded
+[root@winserver2012 db3]# docker images 
+REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+yuol                    0.1                 e68d36db6693        28 hours ago        253 MB
+docker.io/python        alpine              0df00792d84c        3 days ago          78.8 MB
+docker.io/hello-world   latest              f2a91732366c        8 months ago        1.85 kB
+[root@winserver2012 db3]# docker tag yuol:0.3 suing/yuol:0.1
+[root@winserver2012 db3]# docker images 
+REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+suing/yuol              0.1                 e68d36db6693        28 hours ago        253 MB
+yuol                    0.1                 8834cefac118        28 hours ago        253 MB
+docker.io/python        alpine              0df00792d84c        3 days ago          78.8 MB
+docker.io/hello-world   latest              f2a91732366c        8 months ago        1.85 kB
+[root@winserver2012 db3]# docker push suing/yuol:0.1
+The push refers to a repository [docker.io/suing/yuol]
+f12a1eed4793: Pushed 
+21b2d63db7f2: Pushed 
+30dd5a85e9c4: Pushed 
+a2b418a2bc3b: Pushed 
+992d5560ec09: Pushed 
+168cd6ea3ea6: Mounted from library/python 
+08f0588bd3d4: Mounted from library/python 
+5aff2448ca83: Mounted from library/python 
+73046094a9b8: Mounted from library/python 
+0.1: digest: sha256:db84d3451b68240e6d0bd28638b2a40358c68cb45edd67b70aa703219dca92ca size: 2207
+[root@winserver2012 db3]# 
+```  
+简要过程  
+```
+docker images
+docker tag yuol:0.3 suing/yuol:0.1
+docker push suing/yuol:0.1
+```
+### 问题
+push后可以在dockerhub查到image,但是通过`docker search username`不能搜到，以及`docker search username/image:version`也搜不到  
+但是直接在另一台电脑`docker pull suing/yuol:0.1`可以拉下来，就是搜索不到，还待解决
 ## 测试用访问地址
 [http://47.94.130.223:3100](http://47.94.130.223:3100)
