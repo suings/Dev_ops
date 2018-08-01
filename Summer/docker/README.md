@@ -1,6 +1,5 @@
 # docker的使用(debian系)
-
-
+基于docker-compose的构建位于[jwc](../jwc/)
 ## 安装:  
 `uname -r`显示出的版本需要大于3.10  
 `wget -qO- https://get.docker.com/ | sh`
@@ -113,7 +112,7 @@ a2b418a2bc3b: Pushed
 73046094a9b8: Mounted from library/python 
 0.1: digest: sha256:db84d3451b68240e6d0bd28638b2a40358c68cb45edd67b70aa703219dca92ca size: 2207
 [root@winserver2012 db3]# 
-```  
+```
 简要过程  
 ```
 docker images
@@ -122,6 +121,10 @@ docker push suing/yuol:0.1
 ```
 ### 问题
 push后可以在dockerhub查到image,但是通过`docker search username`不能搜到，以及`docker search username/image:version`也搜不到  
-但是直接在另一台电脑`docker pull suing/yuol:0.1`可以拉下来，就是搜索不到，还待解决
+但是直接在另一台电脑`docker pull suing/yuol:0.1`可以拉下来，就是搜索不到，~~还待解决~~已经解决(过几天可以搜索到)
 ## 测试用访问地址
 [http://47.94.130.223:3100](http://47.94.130.223:3100)
+
+## 参考
+[Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/)
+

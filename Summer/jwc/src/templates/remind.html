@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>订阅</title>
+
+  <style type="text/css">
+    .main{
+      margin: 0 auto;
+      max-width: 720px;
+      background-color: lightgrey;
+    }
+  </style>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    function rf(){
+      return false
+    }
+    function sub() {
+      var email=document.getElementById("mail").value;
+      var link=document.location.href;
+      if (email){
+        $.post(link,$("#form").serialize(),function(data){
+          var status=$.parseJSON(data)["status"]
+          if (status=="ok") {
+            alert("订阅成功\n将为您推送数据");
+            document.location.href="/"
+          }else{
+            alert("服务器错误！")
+          }
+        })
+      }else{
+        alert("请输入邮箱")
+      }
+      return false
+    }
+  </script>
+</head>
+<body>
+  <div class="main">
+    <p>订阅是指在教务处成绩更新时，本系统会通过邮件发送成绩到你的邮箱，免去了数次登录教务处而无所得的困扰</p>
+    <p>本系统每12小时为订阅用户自动查询信息，并进行推送</p>
+    <p>请于下方填写你的邮箱，然后单击"订阅"</p>
+    <form method="POST" id="form">
+      <input type="email" name="mail" id="mail" placeholder="请填写你的邮箱">
+      
+    </form>
+    <button onclick="return sub()">订阅</button>
+   </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+version: "3"
+services:
+
+   db:
+     image: mongo
+     volumes:
+       - ~/dbdata:/data/db
+     restart: always
+     expose:
+      - "27017"
+   flask:
+     build: .
+     depends_on:
+       - db
+     ports:
+       - "3100:5000"
+     volumes:
+       - ./src:/src
+     restart: always
+volumes:
+    db_data:
