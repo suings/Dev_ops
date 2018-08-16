@@ -62,6 +62,9 @@ api.sendmail()里面隐去了账户信息，使用前需先补充完整
 app.py和remind.py可以单独运行起来，放在后台运行可以使用:  
 `nohup python3 app.py >> app.log 2>&1 &`    
 `nohup python3 remind.py >> remind.log 2>&1 &`  
+18/8/16更新:
+发现可以使用guincorn启动flask,`gunicorn -w 2 -b :3100 app:app --daemon`   
+gunicorn简单理解就是可以管理flask进程，要是flaks进程死了，guincorn可以将它重新拉起来
 ## 完成图
 ![](img/1.png)  
 ![](img/2.png)
